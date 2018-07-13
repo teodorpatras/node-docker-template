@@ -1,0 +1,31 @@
+{
+  "name": "node-docker-template",
+  "version": "1.0.0",
+  "description": "Template for an Express app running in Docker with hot reloading and VSCode live debugging in place.",
+  "repository": "git@github.com:teodorpatras/node-docker-template.git",
+  "author": "Teo",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --nolazy --require babel-register --inspect=0.0.0.0:9229 ./src/app.js",
+    "up": "docker-compose up"
+  },
+  "dependencies": {
+    "express": "4.16.3"
+  },
+  "devDependencies": {
+    "babel": "6.23.0",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "6.26.0"
+  },
+  "babel": {
+    "presets": [
+      ["env", {
+        "targets": {
+          "node": "current"
+        }
+      }]
+    ],
+    "sourceMaps": true,
+    "retainLines": true
+  }
+}
